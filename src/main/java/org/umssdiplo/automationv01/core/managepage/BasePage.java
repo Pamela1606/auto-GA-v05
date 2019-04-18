@@ -11,6 +11,7 @@ import org.umssdiplo.automationv01.core.customwebdriver.ManageDriver;
  * @author <a href="mailto:luis.marcelo.garay@gmail.com">Marcelo Garay</a>
  * @version 1.0.0
  */
+
 public abstract class BasePage {
     protected WebDriver webDriver;
     protected WebDriverWait webDriverWait;
