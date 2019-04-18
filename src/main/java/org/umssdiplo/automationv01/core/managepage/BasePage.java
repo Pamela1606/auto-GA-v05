@@ -12,6 +12,7 @@ import org.umssdiplo.automationv01.core.customwebdriver.ManageDriver;
  * @version 1.0.0
  */
 
+
 public abstract class BasePage {
     protected WebDriver webDriver;
     protected WebDriverWait webDriverWait;
