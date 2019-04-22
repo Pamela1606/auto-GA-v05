@@ -23,7 +23,6 @@ public abstract class BasePage {
     public BasePage() {
         webDriver = ManageDriver.getInstance().getWebDriver();
         webDriverWait = ManageDriver.getInstance().getWebDriverWait();
-
         PageFactory.initElements(webDriver, this);
     }
 }

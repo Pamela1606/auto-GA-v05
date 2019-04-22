@@ -1,9 +1,6 @@
 package org.umssdiplo.automationv01.core.utils;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.umssdiplo.automationv01.core.customwebdriver.ManageDriver;
 
@@ -20,6 +17,12 @@ public class CommonEvents {
     public static void setInputField(WebElement webElement, String content) {
         ManageDriver.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(webElement));
         webElement.clear();
+        webElement.sendKeys(content);
+    }
+
+    public static void setInputFieldNoEditable(WebElement webElement, String content) {
+        ManageDriver.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(webElement));
+        webElement.sendKeys(Keys.DELETE);
         webElement.sendKeys(content);
     }
 
@@ -85,6 +88,26 @@ public class CommonEvents {
                 .filter(element -> content.equals(element.getText()))
                 .findAny()
                 .orElse(null);
+    }
+
+    public static Integer findWebElementPosition(List<WebElement> elements, String content) {
+        Integer response = -1;
+
+        for (int i = 0; i < elements.size(); i++) {
+            if (content.equals(elements.get(i).getText())) {
+                response = i;
+            }
+        }
+
+        return response;
+    }
+
+    public static WebElement findByXPath(String expression) {
+        return ManageDriver.getInstance().getWebDriver().findElement(By.xpath(expression));
+    }
+
+    public static WebElement findById(String id) {
+        return ManageDriver.getInstance().getWebDriver().findElement(By.id(id));
     }
 
     /**
