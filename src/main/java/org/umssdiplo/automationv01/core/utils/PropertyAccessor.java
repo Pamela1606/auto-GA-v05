@@ -54,8 +54,8 @@ public class PropertyAccessor {
         return getDataProperty(BROWSER);
     }
 
-    public String getBaseUrl() {
-        return getDataProperty(BASE_URL);
+    public String getBaseUrl(WebUrls webSystem) {
+        return getDataProperty(BASE_URL + webSystem);
     }
 
     public String getUser() {

@@ -15,11 +15,11 @@ public class BrandDelete extends BasePage {
     @FindBy(id = "modal-cancel")
     private WebElement cancelButton;
 
-    public void deleteIncident() {
+    public void deleteBrand() {
         clickButton(deleteBrand);
     }
 
-    public void cancelIncident() {
+    public void cancelBrand() {
         clickButton(cancelButton);
     }
 
@@ -28,7 +28,7 @@ public class BrandDelete extends BasePage {
         clickButton(element);
     }
 
-    public WebElement verifyBrandDelete(String name) {
+    public WebElement verifyBrandDeleted(String name) {
         try {
             return findByXPath(("//td[contains(text(), '" + name + "')]"));
         } catch (Exception e) {

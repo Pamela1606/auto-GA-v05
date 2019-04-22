@@ -19,11 +19,11 @@ public class BrandCreate extends BasePage {
     @FindBy(id = "createBrand")
     private WebElement createBrandButton;
 
-    public void openBrandForm() {
+    public void openBrandsForm() {
         clickButton(addBrandButton);
     }
 
-    public void fillBrandForm(Brand brand) {
+    public void fillBrandsForm(Brand brand) {
         setInputField(nameField, brand.getName());
     }
 
