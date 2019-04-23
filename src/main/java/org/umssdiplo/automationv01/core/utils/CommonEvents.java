@@ -3,6 +3,12 @@ package org.umssdiplo.automationv01.core.utils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.umssdiplo.automationv01.core.customwebdriver.ManageDriver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -121,6 +127,16 @@ public class CommonEvents {
      */
     public static void pressEnterKey(WebElement webElement) {
         webElement.sendKeys(Keys.ENTER);
+    }
+
+    public static void hoverOnElement(WebElement webElement){
+        Actions actions = new Actions(ManageDriver.getInstance().getWebDriver());
+        actions.moveToElement(webElement).perform();
+    }
+
+    public static void selectElement(WebElement webElement, String arg0){
+        Select drpList = new Select(webElement);
+        drpList.selectByVisibleText(arg0);
     }
 
 }
